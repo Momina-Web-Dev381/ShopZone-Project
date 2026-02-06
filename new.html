@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Product Cards</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<style>
+
+body {
+    padding: 20px;
+    background-color: rgb(120, 210, 180);
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Home Page */
+
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+.navbar {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    z-index: 1000;
+
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #00ffd5 !important;
+}
+
+.navbar-brand i {
+    background: transparent;
+    color: #00ffd5;
+    font-size: 24px;
+}
+
+.nav-link {
+    color: #fff !important;
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #00ffd5 !important;
+}
+
+h1 {
+    margin: 30px 0;
+    font-weight: bold;
+}
+
+
+.product-card {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 15px;
+    padding: 15px;
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.product-card img {
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.product-desc {
+    font-size: 14px;
+    opacity: 0.85;
+    margin: 8px 0;
+}
+
+.buy-btn {
+    background: #00ffd5;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 8px 15px;
+    width: 100%;
+}
+
+.buy-btn:hover {
+    background: #00c7aa;
+}
+
+
+
+.footer-ui {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    padding: 50px 0 20px;
+    font-size: 14px;
+}
+
+.footer-ui h5 {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.footer-ui p {
+    margin-bottom: 6px;
+    opacity: 0.9;
+}
+
+.footer-logo {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer-copy {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.footer-copy:hover {
+    color: #00ffd5;
+    cursor: default;
+    }
+
+    .footer {
+        margin: 0;
+        padding: 0;
+        width: 100;
+    }
+
+
+ .Banner{
+      width: 100%;
+      height: 500px;
+      background-image: url(assets/banner.png);
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 10px;
+      display: block;
+      border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    }
+
+
+    .OneClickuP{
+        width: 70px;
+        height: 70px;
+        background-color: rosybrown;
+        border-radius: 50%;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+    }
+    .OneClickuP a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .OneClickuP:hover{
+        background-color: rgb(233, 154, 167);
+        cursor: pointer;
+    }
+
+</style>
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="fas fa-shopping-bag"></i> ShopZone
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="new.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+<p id="top">
+<div class="OneClickuP">
+    <a href="#top"><i class="fas fa-arrow-up"></i>
+</a>
+</div>
+
+<div class="Banner">
+  
+</div>
+
+
+<h1 class="text-center">Our Featured Products</h1>
+<div class="container mb-5">
+  <div class="row g-4" id="cards-container">
+
+  </div>
+</div>
+
+<footer class="footer-ui">
+  <div class="container">
+    <div class="row align-items-start">
+
+      <div class="col-md-3">
+        <h3 class="footer-logo text-success">
+          <i class="fas fa-shopping-bag"></i> ShopZone
+        </h3>
+        <p>
+          ShopZone is a Pakistan-based online store offering quality products at
+          affordable prices. Our mission is to make shopping simple, reliable,
+          and enjoyable for everyone.
+        </p>
+      </div>
+
+
+      <div class="col-md-2">
+        <h5>Products</h5>
+        <p>Electronics</p>
+        <p>Fashion</p>
+        <p>Accessories</p>
+        <p>Home Essentials</p>
+        <p>Beauty Products</p>
+        <p>Smart Gadgets</p>
+      </div>
+
+    
+      <div class="col-md-3">
+        <h5>About Us</h5>
+        <p>
+          At ShopZone, we believe online shopping should be fast, safe, and
+          convenient. We carefully select products that meet quality standards
+          while keeping customer satisfaction our top priority.
+        </p>
+      </div>
+
+
+      <div class="col-md-2">
+        <h5>Account</h5>
+        <p>Sign Up</p>
+        <p>Login</p>
+        <p>My Account</p>
+        <p>Order History</p>
+        <p>Wishlist</p>
+      </div>
+
+    
+      <div class="col-md-2">
+        <h5>Contact Us</h5>
+        <p>Karachi, Pakistan</p>
+        <p>+92 300 1234567</p>
+        <p>support@shopzone.com</p>
+      </div>
+
+    </div>
+
+    <div class="footer-copy text-center">
+      © 2026 ShopZone. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+        
+</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+<script>
+async function getData() {
+    let response = await fetch('https://dummyjson.com/products');
+    let data = await response.json();
+
+    data.products.forEach(product => {
+        document.getElementById('cards-container').innerHTML += `
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="product-card">
+                <img src="${product.images[0]}" class="img-fluid">
+                <div class="product-title">${product.title}</div>
+                <div class="product-desc">${product.description}</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+        `;
+    });
+}
+
+getData();
+</script>
+
+</body>
+</html>
